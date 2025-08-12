@@ -2,8 +2,10 @@ package app.vercel.walkdog.register.newuser;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -22,5 +24,40 @@ public class NewUserTests {
 
         // Aqui o site Walkdog será aberto
         navegador.get("https://walkdog.vercel.app/");
+
+        // Validar que está na tela inicial
+        String firstScreen = navegador.findElement(By.cssSelector("h1")).getText();
+        Assertions.assertEquals("Cuidado e diversão em cada passo", firstScreen);
+
+        // Vou clicar no botão com o css igual strong
+        navegador.findElement(By.cssSelector("strong")).click();
+
+        // Validar que está na tela de cadastro
+        String screenRegister = navegador.findElement(By.cssSelector("h1")).getText();
+        Assertions.assertEquals("Faça seu cadastro", screenRegister);
+
+        // Aqui ele vai inserir o nome do Walker no campo nome
+        navegador.findElement(By.name("name")).sendKeys("Kira");
+
+        // Aqui ele vai inserir o nome do Walker no campo nome
+        navegador.findElement(By.name("email")).sendKeys("kira@email.com");
+
+        // Aqui ele vai inserir o nome do Walker no campo nome
+        navegador.findElement(By.name("cpf")).sendKeys("12312312396");
+
+        // Aqui ele vai inserir o nome do Walker no campo nome
+        navegador.findElement(By.name("cep")).sendKeys("81250000");
+
+        // Clicar no botão "Buscar CEP"
+
+
+        // Aqui ele vai inserir o nome do Walker no campo nome
+        navegador.findElement(By.name("addressNumber")).sendKeys("12");
+
+        // Aqui ele vai inserir o nome do Walker no campo nome
+        navegador.findElement(By.name("addressDetails")).sendKeys("Apartamento 3");
+
+        // Fechar navegador
+        //navegador.quit();
     }
 }
