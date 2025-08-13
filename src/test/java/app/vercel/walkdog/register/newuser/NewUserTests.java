@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -36,6 +37,9 @@ public class NewUserTests {
         String screenRegister = navegador.findElement(By.cssSelector("h1")).getText();
         Assertions.assertEquals("Faça seu cadastro", screenRegister);
 
+        // Aqui valida que está na seção "Dados"
+
+
         // Aqui ele vai inserir o nome do Walker no campo nome
         navegador.findElement(By.name("name")).sendKeys("Kira");
 
@@ -45,17 +49,30 @@ public class NewUserTests {
         // Aqui ele vai inserir o nome do Walker no campo nome
         navegador.findElement(By.name("cpf")).sendKeys("12312312396");
 
+        // Aqui valida que está na seção "Endereço"
+
         // Aqui ele vai inserir o nome do Walker no campo nome
         navegador.findElement(By.name("cep")).sendKeys("81250000");
 
         // Clicar no botão "Buscar CEP"
-
+        navegador.findElement(By.className("field")).click();
 
         // Aqui ele vai inserir o nome do Walker no campo nome
         navegador.findElement(By.name("addressNumber")).sendKeys("12");
 
         // Aqui ele vai inserir o nome do Walker no campo nome
         navegador.findElement(By.name("addressDetails")).sendKeys("Apartamento 3");
+
+        // Aqui ele valida que está na seção "Atividades extras"
+
+        // Clicar na opção "Cuidar"
+        // Falta clicar em Cuidar e realizar o upload do arquivo
+
+        // Realizar o upload do arquivo
+        // Falta realizar o upload do arquivo
+
+        // Clicar no Botão "Cadastrar"
+        navegador.findElement(By.className("button-register")).click();
 
         // Fechar navegador
         //navegador.quit();
