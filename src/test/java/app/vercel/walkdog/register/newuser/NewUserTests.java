@@ -1,19 +1,19 @@
 package app.vercel.walkdog.register.newuser;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import java.io.File;
 import java.time.Duration;
+import org.openqa.selenium.WebElement;
 
 @DisplayName("Testes Automatizados da Funcionalidade de Novo Walker")
 public class NewUserTests {
+
     @Test
     @DisplayName("Criando um novo Walker com dados válidos")
     public void testCriandoUmNovoWalkerComDadosValidos() {
@@ -66,13 +66,15 @@ public class NewUserTests {
         // Aqui ele valida que está na seção "Atividades extras"
 
         // Clicar na opção "Cuidar"
-        // Falta clicar em Cuidar e realizar o upload do arquivo
+        navegador.findElement(By.cssSelector("li:nth-child(1)")).click();
 
         // Realizar o upload do arquivo
         // Falta realizar o upload do arquivo
+        navegador.findElement(By.cssSelector("div[role='presentation'] p")).click();
 
         // Clicar no Botão "Cadastrar"
         navegador.findElement(By.className("button-register")).click();
+        // Falta a parte de inserir a img
 
         // Fechar navegador
         //navegador.quit();
