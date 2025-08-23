@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.io.File;
 import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 
 @DisplayName("Testes Automatizados da Funcionalidade de Novo Walker")
@@ -70,7 +70,10 @@ public class NewUserTests {
 
         // Realizar o upload do arquivo
         // Falta realizar o upload do arquivo
-        navegador.findElement(By.cssSelector("div[role='presentation'] p")).click();
+        //navegador.findElement(By.cssSelector("div[role='presentation'] p")).click();
+
+
+
 
         // Clicar no Botão "Cadastrar"
         navegador.findElement(By.className("button-register")).click();
